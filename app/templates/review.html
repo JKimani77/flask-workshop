@@ -2,22 +2,19 @@
 
 
 
-
-
-
-
 {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
 
-
 {% block content %}
 <div>
-    <div>
-        <br>
+    <div class="Review">
+        <form action="">Review Header</form>
+        <form action="">Your review</form>
+        <form action="">Rating</form>
+        <button type="submit">Post!</button>
 
-        <p><a href="review.html">moipoikoiniomimim</a>]]]]]]]]</p>
     </div>
 </div>
 {% endblock %}
