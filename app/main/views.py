@@ -7,7 +7,7 @@ from ..models import Review, Recipe, User, GroceryList
 def home():
     return render_template('index.html')
 
-@main.route("/review")
+@main.route("/review.html")
 def review():
     pdb.run
     i = 12
