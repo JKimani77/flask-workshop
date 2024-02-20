@@ -7,14 +7,13 @@ from ..models import Review, Recipe, User, GroceryList
 def home():
     return render_template('index.html')
 
-@main.route("/review.html")
+@main.route("/review")
 def review():
     pdb.run
-    i = 12
-    while i < 18: return i % 3
+
     
     header = []
     description = []
     rating = []
-    recipeid = Review.recipeid
+    #recipeid = Review.recipeid
     return render_template('review.html')
