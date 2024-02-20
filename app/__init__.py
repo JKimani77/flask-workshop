@@ -12,7 +12,7 @@ def create_app(config_name):
 
     #to setup the configuration
     app.config.from_object(DevConfig)
-    app.config.from_object(config_options[config_name])
+    #app.config.from_object(config_options[config_name])
 
 
     # Initializing Flask Extensions
@@ -23,5 +23,6 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
 
     # setting config
-    from .request import configure_request
-    configure_request(app)
+    #from .request import configure_request
+    #configure_request(app)
+    return app
