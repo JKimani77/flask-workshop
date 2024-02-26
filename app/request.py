@@ -16,5 +16,12 @@ def configure_request(app):
 
 def search(id):
     results = []
+    get_spoon_url = base_url.fomat(id, api_key)
+
+    with urllib.request.urlopen(get_spoon_url) as url:
+        get_spoon_data = url.read()
+        get_spoon_response = json.loads(get_spoon_data)
     
-    return
+        spoon_results = None
+
+    return get_spoon_response
