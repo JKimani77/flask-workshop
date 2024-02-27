@@ -1,5 +1,6 @@
 from app import main
 import urllib.request,json
+import requests
 from .models import Recipe
 
 
@@ -14,8 +15,13 @@ def configure_request(app):
     api_key = app.config['SPOON_API_KEY']
     base_url = app.config["SPOON_API_BASE_URL"]
 
-def search(id):
+def searchfunc(id):
     results = []
+    r = requests.get(base_url, auth=(api_key))
+
+    print (r.status_code)
+    print (r.headers['content-type'])
+    '''
     get_spoon_url = base_url.fomat(id, api_key)
 
     with urllib.request.urlopen(get_spoon_url) as url:
@@ -23,5 +29,6 @@ def search(id):
         get_spoon_response = json.loads(get_spoon_data)
     
         spoon_results = None
+        '''
 
-    return get_spoon_response
+    return r
