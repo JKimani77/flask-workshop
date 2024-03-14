@@ -46,3 +46,9 @@ conn = psycopg2.connect(dbname =Config.DB_USERNAME , user=Config.DB_PASSWORD)
 
 # Open a cursor to perform database operations
 cur = conn.cursor()
+
+# Execute a query
+#cur.execute("SELECT * FROM my_data")
+
+# Retrieve query results
+#records = cur.fetchall()
