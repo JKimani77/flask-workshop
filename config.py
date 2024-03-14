@@ -1,4 +1,8 @@
 import os
+import psycopg2
+
+
+
 class Config:
     '''
     General configuration parent class
@@ -7,8 +11,8 @@ class Config:
     #ARTICLES_BASE_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SPOON_API_KEY = os.environ.get('SPOON_API_KEY')
-
- 
+    DB_USERNAME = os.environ.get('username')
+    DB_PASSWORD = os.environ.get('password')
 
 
 
@@ -36,3 +40,9 @@ config_options = {
     'development' :DevConfig,
     'production' :ProdConfig
 }
+
+# Connecting to my postgres DB
+conn = psycopg2.connect(dbname =Config.DB_USERNAME , user=Config.DB_PASSWORD)
+
+# Open a cursor to perform database operations
+cur = conn.cursor()
