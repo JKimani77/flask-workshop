@@ -43,7 +43,7 @@ config_options = {
 
 # Connecting to my postgres DB
 conn = psycopg2.connect(dbname =Config.DB_USERNAME , user=Config.DB_PASSWORD)
-
+  
 # Open a cursor to perform database operations
 cur = conn.cursor()
 
